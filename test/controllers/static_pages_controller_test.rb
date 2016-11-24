@@ -4,11 +4,10 @@ class StaticPagesControllerTest < ActionController::TestCase
 
 def setup
 @titre ="super application"
-
 end
 
 test "should get root_url" do
-    get :root_url
+    get root_url
     assert_response :success
 #assert_select "title", "Contact #{@titre}"
   end

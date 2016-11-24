@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  
-  <title><%=yield(:title)%> super application</title>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <title><%=full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+        <%=link_to "my_app","#",id: "logo" %>
+            <nav>
+                  <ul class="nav navbar-nav navbar-right">
+                      <li>  <%=link_to "home","home",id: "Home" %> <!--<a href="help" >Vers help</a></li>-->
+                      <li>  <%=link_to "about","about",id: "About" %> <!--<a href="about" >Vers About</a></li>-->
+                      <li>  <%=link_to "help","help",id: "Help" %> <!--<a href="toto" >Vers Toto</a></li>-->
+                      <li>  <%=link_to "toto","toto",id: "Toto" %> <!--<a href="contact" >Vers contact</a></li>-->
+                      <li>  <%=link_to "contact","contact",id: "Contact" %>
+
+                      <li>  <%=link_to "log in","#",id: "log in" %>
+                  </ul>
+            </nav>
+        </div>
+    </header>
+
+<div class="container"
+    <%= yield %> <!--#insert le contenu de la page-->
+</div>
 
 </body>
 </html>
