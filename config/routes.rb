@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/home', to: 'static_pages#home'
   get '/login', to: 'static_pages#login'
+  get '/signup' => 'users#new'
+  #match "/signup", to: 'users#new', via: [:all]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
