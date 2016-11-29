@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
 resources :users
 
   get '/help', to: 'static_pages#help'
@@ -7,8 +9,12 @@ resources :users
   get '/toto', to: 'static_pages#toto'
   get '/contact', to: 'static_pages#contact'
   get '/home', to: 'static_pages#home'
-  get '/login', to: 'static_pages#login'
+  #get '/login', to: 'static_pages#login'
   get '/signup' => 'users#new'
+
+get  '/login', to: 'sessions#new'
+post  '/login', to: 'sessions#create'
+delete  '/logout', to: 'sessions#destroy'
   #match "/signup", to: 'users#new', via: [:all]
 
   # The priority is based upon order of creation: first created -> highest priority.
