@@ -1,3 +1,5 @@
 #!/usr/bin/bash
 git add -A
-git commit $1
+git commit -m  \"$1\"
+git push -u origin master
+git push heroku master
