@@ -63,6 +63,9 @@ class UserTest < ActiveSupport::TestCase
             @user.save
             assert @user.valid? #,"#{varmail} ok"," pb"
             end
+
+
+
 =begin
 assert varmail.downcase?, " bien en minuscule","bien en majsucule"
       if varmail == varmail.downcase

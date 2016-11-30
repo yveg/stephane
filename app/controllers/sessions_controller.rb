@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   def create
   user = User.find_by(email: params[:session][:email].downcase)
           if  user && user.authenticate(params[:session][:password])
+          log_in user
           flash.now[:success]= "log reussi, bien authentifie"
           redirect_to user
            #render 'show'
@@ -15,6 +16,11 @@ class SessionsController < ApplicationController
           render 'new'
           end
 
+  end
+
+  def  destroy
+  session[:user_id]=nil
+  redirect_to root_path
   end
 
 end

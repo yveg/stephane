@@ -1,1 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.htm
+nordine:
+ name: Super Nordine
+ email : nordine@belgacom.be
+ password_digest: <%= User.digest('mot2passe') %>
