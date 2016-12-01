@@ -1,13 +1,9 @@
 <% provide(:title, 'Edit all user') %>
 <h1> all users</h1>
+
+<%= will_paginate %>
 <ul class="users">
-  <% @users.each do |n| %>
-  <li>
-    <% gravatar_for n, size: 50 %><br>
-    nom: <%=link_to n.name, n %><br>
-    email: <%=link_to n.email, n %><br>
-    crée le: <%=link_to n.created_at, n %><br>
-    modifié le: <%=link_to n.updated_at, n %><br>
-  </li>
-  <% end %>
+<%= render @users %>
+
 </ul>
+<%= will_paginate %>
