@@ -1,25 +1,26 @@
-    <header class="navbar navbar-fixed-top navbar-inverse">
-        <div class="container">
-        <%=link_to "my_app","#",id: "logo" %>
-            <nav>
-                  <ul class="nav navbar-nav navbar-right">
-                      <li>  <%=link_to "home", root_path, id: "Home" %> </li><!--<a href="help" >Vers help</a></li>-->
-                      <li>  <%=link_to "about", about_path, id: "About" %> </li><!--<a href="about" >Vers About</a></li>-->
-                      <li>  <%=link_to "help", help_path, id: "Help" %> </li><!--<a href="toto" >Vers Toto</a></li>-->
-                      <li>  <%=link_to "toto", toto_path, id: "Toto" %> </li><!--<a href="contact" >Vers contact</a></li>-->
-                      <li>  <%=link_to "contact", contact_path, id: "Contact" %></li>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%=link_to "my_app","#",id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li>  <%=link_to "home", root_path, id: "Home" %> </li><!--<a href="help" >Vers help</a></li>-->
+        <li>  <%=link_to "about", about_path, id: "About" %> </li><!--<a href="about" >Vers About</a></li>-->
+        <li>  <%=link_to "help", help_path, id: "Help" %> </li><!--<a href="toto" >Vers Toto</a></li>-->
+        <li>  <%=link_to "toto", toto_path, id: "Toto" %> </li><!--<a href="contact" >Vers contact</a></li>-->
+        <li>  <%=link_to "contact", contact_path, id: "Contact" %></li>
 
 
-                      <% if logged_in? %>
-                      <li><%=link_to "Profile", current_user %></li>
-                      <li> <%=link_to "Settings", "#" %></li>
-                      <li>  <%=link_to "Log out", logout_path, method: "delete" %></li>
-                      <% else %>
-                      <li><%=link_to "log in", login_path, id: "log in" %></li>
-                      <li> <%=link_to "Signup", signup_path, id: "Signup" %></li>
-                      <% end %>
+        <% if logged_in? %>
+        <li><%=link_to "Tous les utilisateurs", users_path %></li>
+        <li><%=link_to "Profile", current_user %></li>
+        <li> <%=link_to "Settings", edit_user_path(current_user) %></li>
+        <li>  <%=link_to "Log out", logout_path, method: "delete" %></li>
+        <% else %>
+        <li><%=link_to "log in", login_path, id: "log in" %></li>
+        <li> <%=link_to "Signup", signup_path, id: "Signup" %></li>
+        <% end %>
 
-                  </ul>
-            </nav>
-        </div>
-    </header>
+      </ul>
+    </nav>
+  </div>
+</header>
