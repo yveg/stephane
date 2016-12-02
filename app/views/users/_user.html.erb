@@ -5,5 +5,9 @@
   email: <%=link_to n.email, n %><br>
   crée le: <%=link_to n.created_at, n %><br>
   modifié le: <%=link_to n.updated_at, n %><br>
+
+  <% if current_user.admin? && !current_user?(user) %>
+  | <%= link_to "delete", user, method: :delete, data: {confirm: "are you sure?"} %>
+  <% end %>
 </li>
 <% end %>

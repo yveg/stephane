@@ -1,0 +1,7 @@
+
+<h1>SUPER APPLICATION</h1>
+<p>Salut <%= @user.name %>,</p>
+<p>
+Bienvenue sur ma super application, pour activer ton compte clique sur ce lien:
+</p>
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>

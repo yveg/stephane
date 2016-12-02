@@ -1,4 +1,4 @@
-<%= render 'shared/error_messages' %>
+
 
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
@@ -6,6 +6,7 @@
 
 
 <%= form_for(@user) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
 <%= f.label :name %>
 <%= f.text_field :name %>
 <%= f.label :email %>
