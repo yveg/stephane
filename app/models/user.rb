@@ -53,6 +53,10 @@ has_many :microposts, dependent: :destroy
     UserMailer.account_activation(self).deliver_now
   end
 
+  def feed
+  microposts
+ end
+
   private
   def create_activation_digest
     self.activation_token = User.new_token
