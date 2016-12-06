@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   get 'sessions/new'
 
-resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 resources :account_activations, only: [:edit]
 resources :microposts, only: [:create, :destroy]
+resources :relationships,only: [:create, :destroy]
 
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'

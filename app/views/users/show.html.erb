@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <%=gravatar_for @user %>
-
+ <%= render 'follow_form' %>
 
 nom de l'util: <%= @user.name %><br>
  email de l'util: <%= @user.email %>

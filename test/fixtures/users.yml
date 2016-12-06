@@ -3,3 +3,4 @@ nordine:
  name: Super Nordine
  email : nordine@belgacom.be
  password_digest: <%= User.digest('mot2passe') %>
+ activated: true
